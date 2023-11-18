@@ -1,0 +1,134 @@
+<head>
+  <meta charset="utf-8" />
+  <title>HKBN JOS+ PORTAL | LOGIN</title>
+  <meta name="description" content="Login Page" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-452326689"></script>
+<body id="kt_body" class="quick-panel-right demo-panel-right offcanvas-right header-fixed subheader-enabled page-loading">
+  <div class="d-flex flex-column flex-root">
+    <div class="login login-6 login-signin-on login-signin-on d-flex flex-column-fluid" id="kt_login">
+      <div class="d-flex flex-column flex-column-fluid" style="background-image: url(/assets/media/background/bg-3.jpg)">
+        <div class="d-flex w-100 flex-center pb-6">
+          <div class="login-wrapper">
+            <div class="text-dark-75 flex-center">
+              <div class="text-center pt-20">
+                <a href="">
+                  <!-- <img
+                  src="{{ asset('assets/media/logos/hkbnlogo.svg') }}"
+                  class="max-h-75px"
+                  alt=""
+                /> -->
+                </a>
+                <div class="alert alert-danger" *ngIf="authenticationError" data-cy="loginError">
+                  <strong>Failed to sign in!</strong> Please check your credentials and try again.
+                </div>
+                <h3 class="mt-2 login-title">JOIN OUR GREAT SHOPPING COMMUNITY</h3>
+              </div>
+              <!--
+                      @if (session('status'))
+                          <div class="alert alert-custom alert-notice alert-light-danger fade show" role="alert">
+                              <div class="alert-icon"><i class="flaticon-warning"></i></div>
+                              <div class="alert-text">{{ session('status') }}</div>
+                              <div class="alert-close">
+                                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                      <span aria-hidden="true"><i class="ki ki-close"></i></span>
+                                  </button>
+                              </div>
+                          </div>
+                      @endif
+                      @if ($errors->any())
+                          @foreach ($errors->all() as $error)
+                              <div class="alert alert-custom alert-notice alert-light-danger fade show" role="alert">
+                                  <div class="alert-icon"><i class="flaticon-warning"></i></div>
+                                  <div class="alert-text">{{ $error }}</div>
+                                  <div class="alert-close">
+                                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                          <span aria-hidden="true"><i class="ki ki-close"></i></span>
+                                      </button>
+                                  </div>
+                              </div>
+                          @endforeach
+                      @endif
+                      @if (session('disabled_account'))
+                          <div class="alert alert-custom alert-notice alert-light-danger fade show" role="alert">
+                              <div class="alert-icon"><i class="flaticon-warning"></i></div>
+                              <div class="alert-text">{{ session('disabled_account') }}</div>
+                              <div class="alert-close">
+                                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                      <span aria-hidden="true"><i class="ki ki-close"></i></span>
+                                  </button>
+                              </div>
+                          </div>
+                      @endif -->
+
+              <div class="border-red card shadow-sm h-295px">
+                <div class="card-body">
+                  <form class="form" role="form" (ngSubmit)="login()" [formGroup]="loginForm">
+                    <div class="form-group m-0">
+                      <label class="text-dark" for="username">Email</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="username"
+                        id="username"
+                        placeholder="Your username"
+                        formControlName="username"
+                        #username
+                        data-cy="username"
+                      />
+                    </div>
+
+                    <div class="form-group mt-3">
+                      <label class="text-dark" for="password">Password</label>
+                      <input
+                        type="password"
+                        class="form-control"
+                        name="password"
+                        id="password"
+                        placeholder="Your password"
+                        formControlName="password"
+                        data-cy="password"
+                      />
+                    </div>
+
+                    <div class="text-center mt-5">
+                      <button class="btn-signin font-weight-bold" type="submit">Sign In</button>
+                    </div>
+
+                    <div class="py-6 border-top m-0 text-center">
+                      <a class="h-auto border-0 forgot-password-text" href=""> Forgot Password ? </a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-center">
+          <div class="card register shadow-lg shadow">
+            <div class="text-center">
+              <p>Don't Have an Account?</p>
+              <p>Join our Online Shopping Community! Its Free!</p>
+              <a routerLink="/account/register" class="btn-signup btn">Sign Up</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="{{ asset('assets/plugins/global/plugins.bundle.js') }}"></script>
+  <script src="{{ asset('assets/plugins/custom/prismjs/prismjs.bundle.js') }}"></script>
+  <script src="{{ asset('assets/js/scripts.bundle.js') }}"></script>
+  <script src="{{ asset('assets/js/pages/custom/login/login-general.js') }}"></script>
+  <script type="text/javascript">
+    window.addEventListener('load', function () {
+      if ((window, location.pathname.indexOf('/email/verify') != -1)) {
+        gtag('event', 'conversion', {
+          send_to: 'AW-452326689/4dxyCJSvh4wCEKHq19cB',
+        });
+      }
+    });
+  </script>
+</body>
